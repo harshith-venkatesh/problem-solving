@@ -5,11 +5,9 @@ function MiniJest() {
   }
   
   MiniJest.prototype.describe = function(title, callback) {
-    const previousGroup = this.currentGroup; // Store previous group for nested describe blocks
     this.currentGroup = title;
     console.log(`\n${title}`);
-    callback();
-    this.currentGroup = previousGroup; // Restore previous group
+    callback(); 
   };
   
   MiniJest.prototype.it = function(title, callback) {
